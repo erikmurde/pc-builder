@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="7.0.3" />
+      <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="7.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\DAL.EF.Base\DAL.EF.Base.csproj" />
+      <ProjectReference Include="..\Domain.Base\Domain.Base.csproj" />
+      <ProjectReference Include="..\Domain.Contracts.Base\Domain.Contracts.Base.csproj" />
+    </ItemGroup>
+
+</Project>

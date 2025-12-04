@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\DAL.Base\DAL.Base.csproj" />
+      <ProjectReference Include="..\Domain.App\Domain.App.csproj" />
+      <ProjectReference Include="..\DTO.Base\DTO.Base.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="DTO.Base">
+        <HintPath>..\DTO.Base\bin\Debug\net7.0\DTO.Base.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+</Project>

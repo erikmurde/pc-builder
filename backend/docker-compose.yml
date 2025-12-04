@@ -1,0 +1,33 @@
+version: "3.9"
+
+services:
+  pc-builder-app:
+    container_name: pc-builder-app
+    image: "postgres:16.4-bullseye"
+    ports:
+      # external:internal
+      - "8000:80"
+    depends_on:
+      - pc-builder-db
+    environment:
+      - ConnectionStrings:DefaultConnection="Host=pc-builder-db:5432;Database=pc-builder;Username=postgres;Password=postgres"
+
+  pc-builder-db:
+    container_name: pc-builder-db
+    image: "postgres:16.4-bullseye"
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    logging:
+      options:
+        max-size: 10m
+        max-file: "3"
+    ports:
+      # external:internal
+      - "5445:5432"
+    volumes:
+      - dist-db-postgres-volume-pc-builder:/var/lib/postgresql/data
+
+volumes:
+  dist-db-postgres-volume-pc-builder:
